@@ -1,0 +1,16 @@
+public class MonsterRenderer extends MobEntityRenderer<MonsterEntity, MonsterModel<MonsterEntity>> {
+    public MonsterRenderer(EntityRendererFactory.Context context, MonsterModel<MonsterEntity> entityModel, float f) {
+        super(context, new MonsterModel<>(context.getPart(MonsterModel.MONSTER)), 0.4f);
+    }
+
+    @Override
+    public Identifier getTexture(MonsterEntity entity) {
+        return Identifier.of(Monster.MOD_ID, "textures/entity/monster/monster.png");
+    }
+
+    @Override
+    public void render(MonsterEntity livingEntity, float f, float g, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i) {
+        matrixStack.scale(1, 1, 1);
+        super.render(livingEntity, f, g, matrixStack, vertexConsumerProvider, i);
+    }
+}
