@@ -1,0 +1,9 @@
+public class MonsterClient implements ClientModInitializer {
+	@Override
+	public void onInitializeClient() {
+		// This entrypoint is suitable for setting up client-specific logic, such as rendering.
+
+		EntityModelLayerRegistry.registerModelLayer(MonsterModel.MONSTER, MonsterModel::getTexturedModelData);
+		EntityRendererRegistry.register(EntityInit.MONSTER, MonsterRenderer::new);
+	}
+}
